@@ -8,24 +8,23 @@
 
 import ComposableArchitecture
 
-public enum ___VARIABLE_MODULENAME___Core {}
-
-public extension ___VARIABLE_MODULENAME___Core {
-    struct State: Equatable {
+public struct ___VARIABLE_MODULENAME___Core: ReducerProtocol {
+    public struct State: Equatable {
         public init() {}
     }
 
-    enum Action: Equatable {
+    public enum Action: Equatable {
         case onAppear
     }
 
-    struct Environment {
+    public struct Environment {
         public init() {}
     }
 
-    static let reducer = Reducer<State, Action, Environment>.combine(
-        .init { state, action, environment in
+    public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+        switch action {
+        case .onAppear:
             return .none
         }
-    )
+    }
 }
