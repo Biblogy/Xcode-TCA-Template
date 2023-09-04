@@ -8,7 +8,7 @@
 
 import ComposableArchitecture
 
-public struct ___VARIABLE_MODULENAME___Core: ReducerProtocol {
+public struct ___VARIABLE_MODULENAME___Core: Reducer {
     public struct State: Equatable {
         public init() {}
     }
@@ -17,14 +17,12 @@ public struct ___VARIABLE_MODULENAME___Core: ReducerProtocol {
         case onAppear
     }
 
-    public struct Environment {
-        public init() {}
-    }
-
-    public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        switch action {
-        case .onAppear:
-            return .none
-        }
+    var body: some ReducerOf<Self> {
+	Reduce {
+            switch action {
+            case .onAppear:
+                return .none
+            }
+	}
     }
 }
