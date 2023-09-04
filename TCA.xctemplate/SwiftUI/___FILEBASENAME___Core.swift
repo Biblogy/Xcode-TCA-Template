@@ -8,21 +8,21 @@
 
 import ComposableArchitecture
 
-public struct ___VARIABLE_MODULENAME___Core: Reducer {
-    public struct State: Equatable {
+struct ___VARIABLE_MODULENAME___Core: Reducer {
+    struct State: Equatable {
         public init() {}
     }
 
-    public enum Action: Equatable {
+    enum Action: Equatable {
         case onAppear
     }
 
     var body: some ReducerOf<Self> {
-	Reduce {
+        Reduce { state, action in
             switch action {
             case .onAppear:
                 return .none
             }
-	}
+        }
     }
 }
