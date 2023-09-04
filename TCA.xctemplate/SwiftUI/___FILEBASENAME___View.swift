@@ -13,7 +13,7 @@ struct ___VARIABLE_MODULENAME___View: View {
     let store: StoreOf<___VARIABLE_MODULENAME___Core>
 
     var body: some View {
-        WithViewStore(store) { viewStore in
+        WithViewStore(store, observe: { $0 }) { viewStore in
             Text("Hello world!")
         }
     }
